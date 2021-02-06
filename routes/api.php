@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DirectoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/directories', [DirectoryController::class, "index"]);
+Route::post('/directory', [DirectoryController::class, "store"]);
+Route::put('/directory/{directory}', [DirectoryController::class, "update"]);
+Route::post('/delete/directory/{directory}', [DirectoryController::class, "delete"]);
