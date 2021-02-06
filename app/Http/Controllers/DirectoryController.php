@@ -13,11 +13,11 @@ class DirectoryController extends Controller
         $params = $request->all();
         $directories = Directory::orderBy('created_at', 'desc');
         if(isset($params['code']))
-            $directories->where('code', 'LIKE', "%{$params['code']}%");
+            $directories->where('code', 'like', "%{$params['code']}%");
         if(isset($params['address']))
-            $directories->where('address', 'LIKE', "%{$params['address']}%");
+            $directories->orWhere('address', 'like', "%{$params['address']}%");
         if(isset($params['email']))
-            $directories->where('email', 'LIKE', "%{$params['email']}%");
+            $directories->orWhere('email', 'like', "%{$params['email']}%");
         $per_page = 1;
         if(isset($params['per_page']))
             $per_page = $params['per_page'];
