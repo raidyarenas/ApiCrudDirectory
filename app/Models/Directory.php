@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Directory extends Model
+class DirectoryModel extends Model
 {
     use HasFactory;
+
+    protected $table = 'directories';
 
     /**
      * The attributes that are mass assignable.
