@@ -31,7 +31,7 @@ class DirectoryController extends Controller
             'name' => $request->get('name'),
             'address' => $request->get('address'),
             'town' => $request->get('town'),
-            'postal_code' => $request->get('postalCode'),
+            'postal_code' => $request->get('postal_code'),
             'city' => $request->get('city'),
             'phone' => $request->get('phone'),
             'email' => $request->get('email'),
